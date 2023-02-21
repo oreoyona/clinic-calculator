@@ -1,13 +1,107 @@
-<ActionBar>
-  <Label text="Home"></Label>
-</ActionBar>
+<GridLayout columns="*" rows="300, *" height="100%" *ngIf="currentMode != modes.fg && currentMode != modes.apgar">
 
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['../item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
+    <GridLayout row="0" col="0" backgroundColor={{colors.gray}} columns="20,*" rows="40, *,*,*,*"
+        *ngIf="currentMode == modes.pam">
+        <TextView editable="false" col="1" row="1">
+            {{currentMode}}
+        </TextView>
+        <FlexBoxLayout col="1" , row="2">
+            <TextView editable="false" col="0" row="1" *ngIf="pamArray[0]" class="uxText">
+                PAS: {{pamArray[0]}}
+            </TextView>
+            <TextView editable="false" col="0" row="2" *ngIf="pamArray[1]" class="uxText">
+                PAD: {{pamArray[1]}}
+            </TextView>
+
+            <TextView editable="false" col="0" row="2" *ngIf="!pamArray[0] && !reponse" class="uxText">
+                Valeur systole
+            </TextView>
+            <TextView editable="false" col="0" row="2" *ngIf="pamArray[0] && !pamArray[1]" class="uxText">
+                Valeur diastole
+            </TextView>
+        </FlexBoxLayout>
+
+
+        <TextView editable="false" col="1" row="3" class="operation" fontSize="32rem">
+            {{screen}}
+        </TextView>
+
+        <TextView editable="false" col="1" row="4" class="operation">
+            {{reponse}}
+        </TextView>
+
+    </GridLayout>
+
+    <GridLayout row="0" col="0" backgroundColor={{colors.gray}} columns="20,*" rows="40, *,*,*,*"
+        *ngIf="currentMode == modes.imc">
+
+        <TextView editable="false" col="1" row="1">
+            {{currentMode}}
+        </TextView>
+
+        <TextView editable="false" col="1" row="3" class="operation">
+            {{screen}}
+        </TextView>
+
+
+        <FlexBoxLayout col="1" , row="2">
+            <TextView editable="false" col="0" row="1" class="active" *ngIf="imcArray[0]">
+                Taille: {{imcArray[0]}}
+            </TextView>
+            <TextView editable="false" col="0" row="2" class="active" *ngIf="imcArray[1]">
+                Poids: {{imcArray[1]}}
+            </TextView>
+
+            <TextView editable="false" col="0" row="2" *ngIf="!imcArray[0] && !reponse">
+                Valeur taille(cm)
+            </TextView>
+            <TextView editable="false" col="0" row="2" *ngIf="imcArray[0] && !imcArray[1]">
+                Valeur poids(kg)
+            </TextView>
+        </FlexBoxLayout>
+
+
+        <TextView editable="false" col="1" row="4" fontSize="18px">
+            {{reponse}}
+        </TextView>
+
+    </GridLayout>
+
+
+
+
+    <GridLayout row="1" col="0" backgroundColor="white" columns="*,10,*,10,*,10,*" rows="*,*,*,*,*" paddingBottom="25"
+        borderTopLeftRadius="20" borderTopRightRadius="20">
+        <Button row="0" col="0" text={{currentMode}} class="opBtm" #ac fontSize="16px" disabled></Button>
+        <Button row="0" col="2" text="ac" class="btn" #back (tap)="bck()"></Button>
+        <Button row="0" col="4" text=">" class="op" #pour (tap)="next()" backgroundColor="purple"
+            fontSize="32"></Button>
+        <Button row="0" col="6" text={{modes.pam}} class="op" #div (tap)="changeMode(div)"></Button>
+
+        <Button row="1" col="0" text="7" class="btn" #sept (tap)="getAnim(sept)"></Button>
+        <Button row="1" col="2" text="8" class="btn" #huit (tap)="getAnim(huit)"></Button>
+        <Button row="1" col="4" text="9" class="btn" #neuf (tap)="getAnim(neuf)"></Button>
+        <Button row="1" col="6" text="{{modes.apgar}}" class="op" #fois (tap)="changeMode(fois)"></Button>
+
+
+        <Button row="2" col="0" text="4" class="btn" #quatre (tap)="getAnim(quatre)"></Button>
+        <Button row="2" col="2" text="5" class="btn" #cinq (tap)="getAnim(cinq)"></Button>
+        <Button row="2" col="4" text="6" class="btn" #six (tap)="getAnim(six)"></Button>
+        <Button row="2" col="6" text={{modes.imc}} class="op" #mois (tap)="changeMode(mois)"></Button>
+
+
+        <Button row="3" col="0" text="1" class="btn" #un (tap)="getAnim(un)"></Button>
+        <Button row="3" col="2" text="2" class="btn" #deux (tap)="getAnim(deux)"></Button>
+        <Button row="3" col="4" text="3" class="btn" #trois (tap)="getAnim(trois)"></Button>
+        <Button row="3" col="6" text={{modes.fg}} class="op" #plus (tap)="changeMode(plus)"></Button>
+
+        <Button row="4" col="0" text="Ξ" class="btn" #ext (tap)="getAnim(ext)"></Button>
+        <Button row="4" col="2" text="0" class="btn" #zero (tap)="getAnim(zero)"></Button>
+        <Button row="4" col="4" text="." class="btn" #point (tap)="getAnim(point)" value="."></Button>
+        <Button row="4" col="6" text="=" class="opBtm" #egal (tap)="next()"></Button>
+    </GridLayout>
+</GridLayout>
+<GridLayout background-color="#ccc" columns="*" height="100%" *ngIf="currentMode == modes.apgar">
+    <apgar  [modes]="modes"[currentMode]="currentMode">
+    </apgar>
 </GridLayout>
