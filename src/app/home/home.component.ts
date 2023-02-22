@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Button, Color } from '@nativescript/core';
 import { Page } from '@nativescript/core/ui/page';
 import { checkState, clear, compute, back, scaleAnim} from '../common/functions'
@@ -109,8 +109,8 @@ export class HomeComponent implements OnInit {
 
   }
 
-  constructor(private page: Page, private element: ElementRef) {
-    page.actionBarHidden = true;
+  constructor(private page: Page) {
+    this.page.actionBarHidden = true;
 
   }
 

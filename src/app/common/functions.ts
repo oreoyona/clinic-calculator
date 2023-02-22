@@ -1,3 +1,4 @@
+import { ElementRef, ViewChild } from "@angular/core";
 import { Button } from "@nativescript/core";
 export const formulas = {
     pam: "[(PAS + (2 x PAD) )/3]",
@@ -128,4 +129,17 @@ export function back(screen: string){
  */
 export function converter(len: number){
     return len/100;
+}
+
+/**
+ * choose - helps make a choice on 3 radio btns 
+ * @param vcActive : the active viewChild
+ * @param vc1 : an ElementRef to reset
+ * @param vc2 : an ElementRef to reset
+ * @param btn : the button used to toggle the change
+ */
+export function choose(vcActive: ElementRef, vc1: ElementRef, vc2: ElementRef, btn?: Button){
+    vcActive.nativeElement.toggle();
+    vc1.nativeElement.checked = false;
+    vc2.nativeElement.checked = false;
 }
