@@ -1,8 +1,10 @@
 <h1>The Clinic calculator</h1>
 
-<img src="./Frame-one.jpg" alt="the calculator mockup"/> 
+<img src="https://raw.githubusercontent.com/oreoyona/diet-tracker/master/Frame-one.jpg" alt="the calculator mockup"/> 
 
-Introducing the ultimate clinical parameter calculator app designed to make the lives of medics and paramedics easier! This cutting-edge app has been meticulously crafted with the latest and safest technologies on the market to provide fast and reliable calculations for mean arterial pressure, Apgar score, and BMI.
+<em style="color: aquamarine">Introducing the ultimate clinical parameter calculator app designed to make the lives of medics and paramedics easier!</em>
+
+This cutting-edge app has been meticulously crafted with the latest and safest technologies on the market to provide fast and reliable calculations for mean arterial pressure, Apgar score, and BMI.
 
 With its intuitive interface and sleek design, the app allows you to effortlessly calculate critical clinical parameters in mere seconds. The results are presented in a clear and concise manner, enabling you to make informed decisions quickly and confidently.
 
