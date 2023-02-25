@@ -1,0 +1,13 @@
+@import "~@nativescript/theme/css/core.compat.css";
+button, Button{
+    box-shadow: none;
+    border-width: 1;
+    text-align: left;
+    border-color: rgba(255, 255, 255, 0);
+    z-index: 0;
+    
+}
+
+.checkboxGrid{
+    padding-left: 50px;
+}

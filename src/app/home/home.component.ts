@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
     apgar: "AP",
     pam: "PAM"
   }
-  currentMode = this.modes.apgar;
+  currentMode = this.modes.pam;
+  images = {
+    back: "~/assets/back.svg"
+  }
 
   pamArray = [];
   imcArray = [];
-  pas = true;
-  pad = false;
-
   colors = {
     gray: new Color("#383838")
   }
@@ -50,8 +50,18 @@ export class HomeComponent implements OnInit {
       this.imcArray = [];
     }
     this.screen += btn.text;
-
   }
+  /**
+   * reset - resets the screen and all the variables
+   */
+
+  reset = ()=>{
+    this.reponse = clear(this.reponse);
+    this.pamArray = [];
+    this.imcArray = [];
+    this.screen = clear(this.screen);
+  }
+  
   /**
    * changeMode - changes the mode of the calculator
    * and updates the screen accordingly

@@ -17,6 +17,7 @@ android {
     versionName "1.0.0"
     
     generatedDensities = []
+    applicationId = "com.lecarabin.hydration.calculateur"
   }
 
   aaptOptions {

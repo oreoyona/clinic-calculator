@@ -1,38 +1,38 @@
 .op{
-    border-radius: 100%;
-    background-color: gray;
+    color: aquamarine;
+    background-color: transparent;
     font-size: 16em;
-    overflow: hidden;
     margin-top: 8px;
     margin-bottom: 8px;
+    z-index: 0;
   }
   .opBtm{
-    border-radius:100%;
-    background-color: #6A40BE;
+    border-radius:50%;
+    background-color: gray;
     font-size: 25px;
     margin-bottom: 30px;
+    z-index: 0;
+    
   }
-  .active{
-    background-color: #6A40BE;
+  .opBtm{
+    box-shadow:  0 0 30px gray;
   }
-  .uxText{
-    font-family: monospace;
   
-  }
+
+  .uxText{
+    color: white;
+    font-style: italic;  
+}
   .btn{
     color: #ccc;
-    background-color: white;
+    background-color: transparent;
     font-size: 35em;
     margin-top: 8px;
     margin-bottom: 8px;
-    box-shadow: 0 0 50px #ccc;
-    border-radius: 50%;
+    z-index: 0;
+
   }
-  .btnBtm{
-    background-color: transparent;
-    color: white;
-    font-size: 30px;
-    margin-top: 8px;
-    margin-top: 30px;
-  
+
+  .operation{
+    font-size: 22px;
   }

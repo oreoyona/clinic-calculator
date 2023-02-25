@@ -1,8 +1,11 @@
 {
-  "name": "Lecalculateur",
+  "name": "hydration: Le calculateur",
   "main": "src/main.ts",
   "version": "1.0.0",
   "private": true,
+  "nativescript":{
+    "id": "com.lecarabin.hydration.calculateur"
+  },
   "dependencies": {
     "@angular/animations": "~15.1.0",
     "@angular/common": "~15.1.0",

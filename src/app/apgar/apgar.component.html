@@ -1,67 +1,74 @@
-<ScrollView orientation="vertical" backgroundColor="blue">
-    <GridLayout columns="50,*" rows="50, auto, *, *, auto, *, auto, *, auto, *, auto, *, auto, *" class="radio">
-        <!--Tonus-->
-        <Label text="Activite/Tonus musculaire" col="1" row="1"></Label>
-        <GridLayout colSpan="2" row="2" columns="auto,auto, *" rows="*,*,*">
-            
-            <CheckBox #actif boxType="circle" col="0" row="0"></CheckBox>
-            <button text="Mouvements actifs" (tap)="toggleActif(actifBtn)" col="1" row="0" #actifBtn></button>
-            <CheckBox #moyen boxType="circle" col="0" row="1"></CheckBox>
-            <button text="Quelques flexions ou étirements" (tap)="toggleMoyen(moyenBtn)" col="1", row="1" #moyenBtn></button>
-            <CheckBox #faible boxType="circle" col="0" row="2"></CheckBox>
-            <button text="Mou" (tap)="toggleFaible(faibleBtn)" col="1" row="2" #faibleBtn></button>
+<page>
+    <ScrollView orientation="vertical" class="container">
+        <GridLayout columns="50,*" rows="20, auto, *, *, auto, *, auto, *, auto, *, auto, *, auto, *" class="radio">
+            <!--Tonus-->
+            <Label text="Activité/Tonus" col="1" row="1" class="h2 text-left font-weight-bold" color="aquamarine"></Label>
+            <GridLayout colSpan="2" row="2" columns="auto,auto, *" rows="*,*,*" class="checkboxGrid">
+                
+                <CheckBox #actif boxType="circle" fillColor="aquamarine" col="0" row="0" (tap)="toggleActif(actifBtn)"></CheckBox>
+                <button text="Mouvements actifs" (tap)="toggleActif(actifBtn)" col="1" row="0" #actifBtn></button>
+                <CheckBox #moyen boxType="circle" fillColor="aquamarine" col="0" row="1" (tap)="toggleMoyen(moyenBtn)"></CheckBox>
+                <button text="Quelques flexions ou étirements" (tap)="toggleMoyen(moyenBtn)" col="1", row="1" #moyenBtn></button>
+                <CheckBox #faible boxType="circle" fillColor="aquamarine" col="0" row="2" (tap)="toggleFaible(faibleBtn)"></CheckBox>
+                <button text="Mou" (tap)="toggleFaible(faibleBtn)" col="1" row="2" #faibleBtn></button>
+            </GridLayout>
+    
+            <!-- Pulse-->
+            <Label text="Pulsation" col="1" row="4" class="h2 text-left font-weight-bold" color="aquamarine"></Label>
+            <GridLayout row="5" colspan="2" columns="auto,auto, *" rows="*,*,*" class="checkboxGrid">
+                
+                <CheckBox #fort boxType="circle" fillColor="aquamarine" col="0" row="0" (tap)="setPulseFort(fortBtn)"></CheckBox>
+                <button text=">100 btm" (tap)="setPulseFort(fortBtn)" col="1" row="0" #fortBtn></button>
+                <CheckBox #cent boxType="circle" fillColor="aquamarine" col="0" row="1" (tap)="setPulseCent(centBtn)"></CheckBox>
+                <button text="< 100 btm" (tap)="setPulseCent(centBtn)" col="1", row="1" #centBtn></button>
+                <CheckBox #absent boxType="circle" fillColor="aquamarine" col="0" row="2" (tap)="setPulseAbsent(absentBtn)"></CheckBox>
+                <button text="Absent" (tap)="setPulseAbsent(absentBtn)" col="1" row="2" #absentBtn></button>
+            </GridLayout>
+    
+            <!--Grimace-->
+            <Label text="Grimace" col="1" row="6" class="h2 text-left font-weight-bold" color="aquamarine"></Label>
+            <GridLayout row="7" colspan="2" columns="auto,auto, *" rows="*,*,*" class="checkboxGrid">
+                
+                <CheckBox #grimaceFort boxType="circle" fillColor="aquamarine" col="0" row="0" (tap)="setGrimaceFort(grimaceFortBtn)"></CheckBox>
+                <button text="Pleure et tousse" (tap)="setGrimaceFort(grimaceFortBtn)" col="1" row="0" #grimaceFortBtn></button>
+                <CheckBox #grimaceMoyen boxType="circle" fillColor="aquamarine" col="0" row="1" (tap)="setGrimaceMoyen(grimaceMoyenBtn)"></CheckBox>
+                <button text="Réagit aux stimulations" (tap)="setGrimaceMoyen(grimaceMoyenBtn)" col="1", row="1" #grimaceMoyenBtn></button>
+                <CheckBox #grimaceAbsent boxType="circle" fillColor="aquamarine" col="0" row="2" (tap)="setGrimaceAbsent(grimaceAbsentBtn)"></CheckBox>
+                <button text="Aucune réponse" (tap)="setGrimaceAbsent(grimaceAbsentBtn)" col="1" row="2" #grimaceAbsentBtn></button>
+            </GridLayout>
+    
+            <!--Apparence-->
+    
+            <Label text="Apparence" col="1" row="8" class="h2 text-left font-weight-bold" color="aquamarine"></Label>
+            <GridLayout row="9" colspan="2" columns="auto,auto, *" rows="*,*,*" class="checkboxGrid">
+                <CheckBox #pink boxType="circle" fillColor="aquamarine" col="0" row="0" (tap)="setAppearancePink(pinkBtn)"></CheckBox>
+                <button text="Rose" (tap)="setAppearancePink(pinkBtn)" col="1" row="0" #pinkBtn></button>
+                <CheckBox #notVeryPink boxType="circle" fillColor="aquamarine" col="0" row="1" (tap)="setAppearanceNotVerryPink(notVeryPink)"></CheckBox>
+                <button text="Blue aux extrémités" (tap)="setAppearanceNotVerryPink(notVeryPink)" col="1", row="1" #notVeryPinkBtn></button>
+                <CheckBox #blue boxType="circle" fillColor="aquamarine" col="0" row="2" (tap)="setAppearanceBlue(BlueBtn)"></CheckBox>
+                <button text="Blue" (tap)="setAppearanceBlue(BlueBtn)" col="1" row="2" #BlueBtn></button>
+            </GridLayout>
+    
+    
+            <!--Respirations-->
+            <Label text="Respiration" col="1" row="10" class="h2 text-left font-weight-bold" color="aquamarine"></Label>
+            <GridLayout row="11" colspan="2" columns="auto,auto, *" rows="*,*,*" class="checkboxGrid">
+                
+                <CheckBox #goodResp boxType="circle" fillColor="aquamarine"black="0" row="0" (tap)="setGoodResp(goodRespBtn)"></CheckBox>
+                <button text="Bonne / l'enfant pleure" (tap)="setGoodResp(goodRespBtn)" col="1" row="0" #goodRespBtn></button>
+                <CheckBox #slowResp boxType="circle" fillColor="aquamarine" col="0" row="1"  (tap)="setSlowResp(slowRespBtn)"></CheckBox>
+                <button text="Faible / irrégulière" (tap)="setSlowResp(slowRespBtn)" col="1", row="1" #slowRespBtn></button>
+                <CheckBox #absentResp boxType="circle" fillColor="aquamarine" col="0" row="2" (tap)="setAbsentResp(absentRespBtn)"></CheckBox>
+                <button text="Absente" (tap)="setAbsentResp(absentRespBtn)" col="1" row="2" #absentRespBtn></button>
+            </GridLayout>
+    
+            <GridLayout  colspan="2" row="13" columns="*", rows="20, *, 20, *, 10" backgroundColor="#001A11">
+                <Label col="0", row="1" text="Score et Interprétation" class="h2  text-center font-weight-bold" color="aquamarine"></Label>
+                <FlexBoxLayout col="0", row="3" flexDirection="column" height="60" backgroundColor="#001A11" justifyContent="center" alignItems="center">
+                    <Label text="Score d'Apgar: {{apgarScore}}" class="h3 text-center" marginBottom="10"></Label>
+                </FlexBoxLayout>
+            </GridLayout>
         </GridLayout>
-
-        <!-- Pulse-->
-        <Label text="Pulsation" col="1" row="4"></Label>
-        <GridLayout row="5" colspan="2" columns="auto,auto, *" rows="*,*,*">
-            
-            <CheckBox #fort boxType="circle" col="0" row="0"></CheckBox>
-            <button text=">100 btm" (tap)="setPulseFort(fortBtn)" col="1" row="0" #fortBtn></button>
-            <CheckBox #cent boxType="circle" col="0" row="1"></CheckBox>
-            <button text="< 100 btm" (tap)="setPulseCent(centBtn)" col="1", row="1" #centBtn></button>
-            <CheckBox #absent boxType="circle" col="0" row="2"></CheckBox>
-            <button text="Absent" (tap)="setPulseAbsent(absentBtn)" col="1" row="2" #absentBtn></button>
-        </GridLayout>
-
-        <!--Grimace-->
-        <Label text="Grimace" col="1" row="6"></Label>
-        <GridLayout row="7" colspan="2" columns="auto,auto, *" rows="*,*,*">
-            
-            <CheckBox #grimaceFort boxType="circle" col="0" row="0"></CheckBox>
-            <button text="Pleure et tousse" (tap)="setGrimaceFort(grimaceFortBtn)" col="1" row="0" #grimaceFortBtn></button>
-            <CheckBox #grimaceMoyen boxType="circle" col="0" row="1"></CheckBox>
-            <button text="Réagit aux stimulations" (tap)="setGrimaceMoyen(grimaceMoyenBtn)" col="1", row="1" #grimaceMoyenBtn></button>
-            <CheckBox #grimaceAbsent boxType="circle" col="0" row="2"></CheckBox>
-            <button text="Aucune réponse" (tap)="setGrimaceAbsent(grimaceAbsentBtn)" col="1" row="2" #grimaceAbsentBtn></button>
-        </GridLayout>
-
-        <!--Apparence-->
-
-        <Label text="Apparence" col="1" row="8"></Label>
-        <GridLayout row="9" colspan="2" columns="auto,auto, *" rows="*,*,*">
-            <CheckBox #pink boxType="circle" col="0" row="0"></CheckBox>
-            <button text="Rose" (tap)="setAppearancePink(pinkBtn)" col="1" row="0" #pinkBtn></button>
-            <CheckBox #notVeryPink boxType="circle" col="0" row="1"></CheckBox>
-            <button text="Blue aux extrémités" (tap)="setAppearanceNotVerryPink(notVeryPink)" col="1", row="1" #notVeryPinkBtn></button>
-            <CheckBox #blue boxType="circle" col="0" row="2"></CheckBox>
-            <button text="Blue" (tap)="setAppearanceBlue(BlueBtn)" col="1" row="2" #BlueBtn></button>
-        </GridLayout>
-
-
-        <!--Respirations-->
-        <Label text="Respiration" col="1" row="10"></Label>
-        <GridLayout row="11" colspan="2" columns="auto,auto, *" rows="*,*,*">
-            
-            <CheckBox #goodResp boxType="circle" col="0" row="0"></CheckBox>
-            <button text="Bonne / l'enfant pleure" (tap)="setGoodResp(goodRespBtn)" col="1" row="0" #goodRespBtn></button>
-            <CheckBox #slowResp boxType="circle" col="0" row="1"></CheckBox>
-            <button text="Faible / irrégulière" (tap)="setSlowResp(slowRespBtn)" col="1", row="1" #slowRespBtn></button>
-            <CheckBox #absentResp boxType="circle" col="0" row="2"></CheckBox>
-            <button text="Absente" (tap)="setAbsentResp(absentRespBtn)" col="1" row="2" #absentRespBtn></button>
-        </GridLayout>
-
-        
-    </GridLayout>
-
-</ScrollView>
+    
+    </ScrollView>
+</page>

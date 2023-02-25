@@ -138,7 +138,7 @@ export function converter(len: number){
  * @param vc2 : an ElementRef to reset
  * @param btn : the button used to toggle the change
  */
-export function choose(vcActive: ElementRef, vc1: ElementRef, vc2: ElementRef, btn?: Button){
+export async function choose(vcActive: ElementRef, vc1: ElementRef, vc2: ElementRef, btn?: Button){
     vcActive.nativeElement.toggle();
     vc1.nativeElement.checked = false;
     vc2.nativeElement.checked = false;
