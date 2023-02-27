@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core'
 import { Routes } from '@angular/router'
 import { NativeScriptRouterModule} from '@nativescript/angular'
-import { PamComponent } from '../app/pam/pam.component'
 const routes: Routes = [
   {
     path: '',
@@ -12,11 +11,6 @@ const routes: Routes = [
   {
     path: 'apgar',
     loadChildren: () => import('~/app/apgar/apgar.module').then((m)=> m.ApgarModule)
-  },
-  {
-    path: 'pam',
-    component: PamComponent,
-    outlet: 'secondary'
   }
 
 ]
